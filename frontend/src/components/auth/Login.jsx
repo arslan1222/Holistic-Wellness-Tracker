@@ -70,7 +70,7 @@ export default function Login() {
         </button>
       </form>
       <p className="mt-4 text-center text-sm text-gray-600">
-        Don't have an account? <a href="/register" className="text-primary hover:underline">Register</a>
+        Don't have an account? <span onClick={()=>navigate('/register')} className="cursor-pointer text-primary hover:underline">Register</span>
       </p>
     </div>
   );
