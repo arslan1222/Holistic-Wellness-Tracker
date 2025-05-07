@@ -1,8 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { AppContext } from '../../context/AppContext';
 
 export default function StressTracker() {
+
+  const { backendUrl } = useContext(AppContext);
+  
   const [stressEntries, setStressEntries] = useState([]);
   const [formData, setFormData] = useState({
     stressLevel: 5,
@@ -19,7 +23,7 @@ export default function StressTracker() {
 
   const fetchStressHistory = async () => {
     try {
-      const res = await axios.get('/api/stress/history', {
+      const res = await axios.get(backendUrl + '/api/stress/history', {
         headers: { token }
       });
       setStressEntries(res.data.entries);
@@ -39,7 +43,7 @@ export default function StressTracker() {
         copingStrategies: formData.copingStrategies ? formData.copingStrategies.split(',').map(c => c.trim()) : []
       };
 
-      await axios.post('/api/stress/log', newEntry, {
+      await axios.post(backendUrl + '/api/stress/log', newEntry, {
         headers: { token }
       });
 

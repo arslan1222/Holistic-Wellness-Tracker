@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
-import Dashboard from './components/Dashboard/Dashboard'
 import Login from './components/Auth/Login'
-import Register from './components/Auth/Register'
+import Register from './components/auth/Register'
+import Dashboard from './components/Dashboard/Dashboard'
 import FitnessTracker from './components/Fitness/FitnessTracker'
 import NutritionTracker from './components/Nutrition/NutritionTracker'
 import StressTracker from './components/Stress/StressTracker'
@@ -14,6 +14,7 @@ import { AppContext } from './context/AppContext'
 import ProfilePage from './pages/ProfilePage'
 import UpdateHealthData from './pages/UpdateHealthData'
 import { ToastContainer } from 'react-toastify';
+
 
 // import PrivateRoute from './components/Shared/PrivateRoute'
 
