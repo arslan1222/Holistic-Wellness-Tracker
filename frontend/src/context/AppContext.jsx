@@ -10,7 +10,7 @@ const AppContextProvider = (props) => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const backendUrl = "http://localhost:5000";
+    const backendUrl = "https://holistic-wellness-tracker-backend.onrender.com";
 
 
     useEffect(() => {
